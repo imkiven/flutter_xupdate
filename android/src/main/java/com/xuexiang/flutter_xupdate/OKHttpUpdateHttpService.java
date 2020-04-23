@@ -79,6 +79,7 @@ public class OKHttpUpdateHttpService implements IUpdateHttpService {
             requestCall = OkHttpUtils.postString()
                     .url(url)
                     .content(UpdateUtils.toJson(params))
+					.mediaType(MediaType.parse("application/json; charset=utf-8"))
                     .build();
         } else {
             requestCall = OkHttpUtils.post()
